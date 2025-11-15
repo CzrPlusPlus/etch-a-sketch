@@ -1,0 +1,18 @@
+body {
+    background-color: burlywood;
+}
+
+#container {
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+}
+
+.squares {
+    width: 6.25%;   
+    aspect-ratio: 1/1;  /* Used to make perfect squares */
+    background-color: deeppink;
+    border: 1px solid black;
+    box-sizing: border-box; /* Used so that the width specified includes any borders/margins */
+}
