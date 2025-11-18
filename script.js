@@ -1,9 +1,10 @@
-let gridWidth = 16;  // should be 16 by default
-let gridHeight = 16; // should be 16 by default
+// Default grid dimensions
+let gridWidth = 16; 
+let gridHeight = 16; 
 
 function createGrid(){
     for (let i = 0; i < gridHeight; i++){
-        for (let j = 0; j < gridWidth; j++){   // testing...
+        for (let j = 0; j < gridWidth; j++){
         const newDiv = document.createElement("div");
         newDiv.classList.add("squares");
         newDiv.addEventListener("mouseover", () => {
@@ -12,12 +13,22 @@ function createGrid(){
         container.appendChild(newDiv);
         }
     }
+
+    if (gridWidth != 16){
+        // change CSS to accomodate new width values 
+        let cssWidth = 100 / gridWidth;
+        document.querySelectorAll('.squares').forEach(el => {
+            el.style.width = `${cssWidth}%`;
+        });
+    }
 }
 
 function promptUser(){
-    let userInput = prompt("Please enter a grid size.");
+    let userInput = prompt("Please enter a grid size. Max: 100x100");
     if (userInput <= 100 && userInput >= 1){
         console.log("Valid Input");
+        gridWidth = userInput;
+        gridHeight = userInput;
         remakeGrid()
     }
     else{
@@ -27,26 +38,10 @@ function promptUser(){
 
 function remakeGrid(){
     // clear grid
-    container.innerHTML = "";   // destroys all child nodes immediately
-    // call createGrid using proper dimensions
+    container.innerHTML = ""; 
+    // create new grid
     createGrid();
 }
 
 const container = document.querySelector("#container");
 createGrid();
-console.log("100 / 16 = " + 100/16);    // results in proper width
-
-// const testDiv1 = document.createElement("div");
-// const testDiv2 = document.createElement("div");
-// const testDiv3 = document.createElement("div");
-// const testDiv4 = document.createElement("div");
-
-// container.appendChild(testDiv1);
-// container.appendChild(testDiv2);
-// container.appendChild(testDiv3);
-// container.appendChild(testDiv4);
-
-// testDiv1.classList.add("squares");
-// testDiv2.classList.add("squares");
-// testDiv3.classList.add("squares");
-// testDiv4.classList.add("squares");
