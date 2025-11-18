@@ -7,12 +7,22 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 960px;
+    margin: 0px auto;
 }
 
 .squares {
     width: 6.25%;   
     aspect-ratio: 1/1;  /* Used to make perfect squares */
-    background-color: deeppink;
+    background-color: white;
     border: 1px solid black;
     box-sizing: border-box; /* Used so that the width specified includes any borders/margins */
 }
+
+.hovered {
+    background-color: aqua;
+}
+
+/* Proper way of setting CSS for hovered elements */
+/* .squares:hover {
+    background-color: aqua;
+} */

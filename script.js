@@ -2,11 +2,15 @@ let gridWidth = 16;  // should be 16 by default
 let gridHeight = 16; // should be 16 by default
 
 function createGrid(){
-    // create the first row of 16 divs
-    for (let i = 0; i < gridWidth; i++){   // testing...
+    for (let i = 0; i < gridHeight; i++){
+        for (let j = 0; j < gridWidth; j++){   // testing...
         const newDiv = document.createElement("div");
         newDiv.classList.add("squares");
+        newDiv.addEventListener("mouseover", () => {
+            newDiv.classList.add("hovered");
+        });
         container.appendChild(newDiv);
+        }
     }
 }
 
