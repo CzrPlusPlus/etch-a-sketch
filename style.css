@@ -18,7 +18,7 @@ button {
     background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
-    width: 960px;
+    width: 960px;   /* Original Value: 960px */
 }
 
 .squares {

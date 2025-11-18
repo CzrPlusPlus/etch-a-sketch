@@ -18,14 +18,24 @@ function promptUser(){
     let userInput = prompt("Please enter a grid size.");
     if (userInput <= 100 && userInput >= 1){
         console.log("Valid Input");
+        remakeGrid()
     }
     else{
         console.log("Invalid");
     }
 }
 
+function remakeGrid(){
+    // clear grid
+    container.innerHTML = "";   // destroys all child nodes immediately
+    // call createGrid using proper dimensions
+    createGrid();
+}
+
 const container = document.querySelector("#container");
 createGrid();
+console.log("100 / 16 = " + 100/16);    // results in proper width
+
 // const testDiv1 = document.createElement("div");
 // const testDiv2 = document.createElement("div");
 // const testDiv3 = document.createElement("div");
