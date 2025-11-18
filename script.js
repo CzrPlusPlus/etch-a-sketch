@@ -14,6 +14,16 @@ function createGrid(){
     }
 }
 
+function promptUser(){
+    let userInput = prompt("Please enter a grid size.");
+    if (userInput <= 100 && userInput >= 1){
+        console.log("Valid Input");
+    }
+    else{
+        console.log("Invalid");
+    }
+}
+
 const container = document.querySelector("#container");
 createGrid();
 // const testDiv1 = document.createElement("div");
